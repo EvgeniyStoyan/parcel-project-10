@@ -7,11 +7,9 @@ import debounce from 'lodash.debounce';
 const input = document.querySelector("#search-box")
 const countriesList = document.querySelector(".country-list")
 const countryInfo = document.querySelector(".country-info")
-
 const DEBOUNCE_DELAY = 300;
 
-input.addEventListener("input", debounce(searchCountry, 1000))
-
+input.addEventListener("input", debounce(searchCountry, DEBOUNCE_DELAY))
 
 function searchCountry(e) {
     e.preventDefault()
@@ -28,14 +26,12 @@ function searchCountry(e) {
         .then(getCountries)
         .catch(errorMessage)
 
-
 }
 
 function renderCountries(countries) {
     const markup = countries
         .map(({ name, flags }) => {
             return `
-            
           <li>
           <img src='${flags.svg}' alt='${flags.alt}' width="50" ,height="25">
           ${name.official}
@@ -49,7 +45,6 @@ function renderCountries(countries) {
 function renderCountryCard(country) {
     const markupCountry = country.map(({ name, capital, population, flags, languages }) => {
         return `
-       
     <div class="card-country">
         <img src='${flags.svg}' alt='${flags.alt}' width="50" ,height="28">
         <h1 class="name-country">${name.official}</h1>
