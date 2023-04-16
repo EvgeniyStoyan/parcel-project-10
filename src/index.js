@@ -1,7 +1,6 @@
 import './css/styles.css';
 import { fetchCountries } from "./js/api-service"
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
 import debounce from 'lodash.debounce';
 
 const input = document.querySelector("#search-box")
@@ -25,7 +24,6 @@ function searchCountry(e) {
     fetchCountries(searchQuery)
         .then(getCountries)
         .catch(errorMessage)
-
 }
 
 function renderCountries(countries) {
@@ -64,6 +62,7 @@ function getCountries(country) {
         countriesList.innerHTML = '';
         renderCountryCard(country);
     } else if (country.length >= 2 && country.length <= 10) {
+        countryInfo.innerHTML = '';
         renderCountries(country);
         refineRequestMessage();
     } else {
