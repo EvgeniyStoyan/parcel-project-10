@@ -21,7 +21,7 @@ body {
 }
 
 #search-box {
-  font: inherit;
+  font-size: 22px;
   padding: 8px;
   height: 45px;
   border-radius: 8px;
