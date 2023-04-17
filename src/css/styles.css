@@ -7,7 +7,7 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #914b79;
+  background-color: #692a53;
   color: #212121;
   line-height: 1.5;
   padding: 15px;
@@ -48,7 +48,7 @@ li {
   margin-bottom: 15px;
   gap: 10px;
   color: white;
-
+  background-color: #914b79;
   height: 80px;
   width: auto;
   padding: 20px;
@@ -72,6 +72,7 @@ li {
   outline: 1px solid darkslategray;
   box-shadow: 5px 5px 15px 5px darkgrey;
   border-radius: 10px;
+  background-color: #914b79;
 }
 
 .card-country {
