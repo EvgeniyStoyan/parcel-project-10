@@ -7,21 +7,32 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: #914b79;
   color: #212121;
   line-height: 1.5;
   padding: 15px;
 }
 
+.container-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 #search-box {
   font: inherit;
   padding: 8px;
-  max-width: 320px;
-  margin-bottom: 16px;
+  height: 45px;
+  border-radius: 8px;
+  width: 420px;
 }
 
-input {
-  width: 500px;
+.container {
+  display:flex;
+  justify-content: center;
+  height: auto;
+
 }
 
 ul {
@@ -36,14 +47,44 @@ li {
   list-style: none;
   margin-bottom: 15px;
   gap: 10px;
+  color: white;
+
+  height: 80px;
+  width: auto;
+  padding: 20px;
+  outline: 1px solid darkslategray;
+    box-shadow: 5px 5px 15px 5px darkgrey;
+    border-radius: 10px;
+}
+
+.country-list {
+  display:block;
 }
 
 .name-country {
-  font-size: 50;
+  font-size: 50px;
+}
+
+.card {
+  height: auto;
+  width: auto;
+  padding: 20px;
+  outline: 1px solid darkslategray;
+  box-shadow: 5px 5px 15px 5px darkgrey;
+  border-radius: 10px;
 }
 
 .card-country {
   display: flex;
-    gap: 15px;
+  gap: 15px;
   align-items: center;
+}
+
+p{
+  font-size: 20px;
+color: white;
+}
+
+b {
+  color: #212121;
 }

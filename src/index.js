@@ -43,15 +43,18 @@ function renderCountries(countries) {
 function renderCountryCard(country) {
     const markupCountry = country.map(({ name, capital, population, flags, languages }) => {
         return `
-    <div class="card-country">
-        <img src='${flags.svg}' alt='${flags.alt}' width="50" ,height="28">
-        <h1 class="name-country">${name.official}</h1>
-    </div>
-    <div class="card-country-container">
-            <p><b>Capital: </b>${capital}</p>
-            <p><b>Population: </b>${population}</p>
-            <p><b>Languages: </b>${Object.values(languages)}
-    </div> `
+        <div class="card">
+           <div class="card-country">
+             <img src='${flags.svg}' alt='${flags.alt}' width="50" ,height="28">
+             <h1 class="name-country">${name.official}</h1>
+           </div>
+           <div class="card-country-container">
+             <p><b>Capital: </b>${capital}</p>
+             <p><b>Population: </b>${population}</p>
+            <p p><b>Languages: </b>${Object.values(languages)}</p>
+           </div>
+        </div>
+     `
     })
         .join("");
     countryInfo.innerHTML = markupCountry
@@ -66,6 +69,7 @@ function getCountries(country) {
         renderCountries(country);
         refineRequestMessage();
     } else {
+        countryInfo.innerHTML = '';
         errorMessage();
     }
 }
@@ -73,7 +77,7 @@ function getCountries(country) {
 function refineRequestMessage() {
     Notify.info("Too many matches found. Please enter a more specific name.",
         {
-            timeout: 5000,
+            timeout: 4000,
             width: '400px',
             fontSize: "18px",
             position: 'right-top'
@@ -81,10 +85,9 @@ function refineRequestMessage() {
 }
 
 function errorMessage() {
-
     Notify.failure("Oops, there is no country with that name.",
         {
-            timeout: 5000,
+            timeout: 4000,
             width: '400px',
             fontSize: "18px",
             position: 'right-top'
